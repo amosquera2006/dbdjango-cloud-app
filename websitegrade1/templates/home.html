@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <h2>Student Grades Log</h2>
+<hr>
+    <h5>To operate go .../home/</h5>
+    <h5>To operate go .../join/ for inserting new student information</h5>
+    <h5>To operate go .../joinsolo/</h5>
+    <h5>To operate go .../admin/  username: antonio password: 1234 (CRUD)</h5>
+
+<hr>
+
+    {% for item in all %}
+        Student id: {{item.id}}<br/>
+        Full Name: {{item.fullname}}<br/>
+        Grade: {{item.test}}
+        <hr>
+    {% endfor %}
+
+{% endblock %}

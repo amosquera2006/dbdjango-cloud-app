@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{{form.as_table}}
+
+{% block content %}
+    <h1>Display Only One Student information</h1>
+    <h3>Type the Id of the student</h3>
+
+<form method="POST" action="{% url 'joinsolo' %}">
+  {% csrf_token %}
+
+  <div class="form-group">
+
+    <input type="text" class="form-control" placeholder="Enter Student ID" name="id" value="{{id}}">
+
+  </div>
+    <br/>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+{% endblock %}
+
+{{form}}
+
+<h2>Student Grade Info</h2>
+
+    {% for item in all %}
+        Student id: {{item.id}}<br/>
+        Full Name: {{item.fullname}}<br/>
+        Grade: {{item.test}}
+        <hr>
+    {% endfor %}
+
+

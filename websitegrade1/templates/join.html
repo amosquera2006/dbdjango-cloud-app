@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Add Student Grade Log</h1>
+hr>
+    <h5>To operate go .../home/</h5>
+    <h5>To operate go .../join/ for inserting new student information</h5>
+    <h5>To operate go .../joinsolo/</h5>
+    <h5>To operate go .../admin/  username: antonio password: 1234 (CRUD)</h5>
+
+<hr>
+
+<form method="POST" action="{% url 'join' %}">
+  {% csrf_token %}
+  <div class="form-group">
+
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Full Name" name="fullname">
+
+  </div>
+    <br/>
+  <div class="form-group">
+
+    <input type="text" class="form-control" placeholder="Grade" name="test">
+
+  </div>
+    <br/>
+  <button type="submit" class="btn btn-secondary">Add Student</button>
+</form>
+
+
+
+
+{% endblock %}
+
